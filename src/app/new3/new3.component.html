@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-header">
+      List Prodct
+    </div>
+    <div class="card-body">
+     <p>Fillter by: <input type="text"></p>
+     <h3>Filltered by</h3>
+  <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"> <button type="button" class="btn btn-primary btn-lg">Hien Image</button></th>
+            <th scope="col">Product</th>
+            <th scope="col">Code</th>
+            <th scope="col">Available</th>
+            <th scope="col">Price</th>
+            <th scope="col">5 Star Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let product of products ">
+            <td><img src="{{product.imageUrl}}" width="100px" height="130px"></td>
+            <td>{{product.Name}}</td>
+            <td>{{product.Code}}</td>
+            <td>{{product.releaseDate}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.starRating}}</td>
+          </tr>
+        </tbody>
+      </table>
+  

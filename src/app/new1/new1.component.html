@@ -1,0 +1,45 @@
+<table>
+    <thead>
+        <tr>
+            <th>Hình</th>
+            <th>Họ Và Tên</th>
+            <th>Ngày Sinh</th>
+            <th>Giới Tính</th>
+            <th>Điểm</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- <tr>
+            <td>
+              <img src="{{students[0].photo}}" width="100px;" height="130px">  
+            </td>
+            <td>{{students[0].fullName}}</td>
+            <td>{{students[0].birthDay}}</td>
+            <td>{{students[0].gender}}</td>
+            <td>{{students[0].mark}}</td>
+        </tr>
+        <tr>
+            <td>
+                    <img src="{{students[1].photo}}" width="100px;" height="130px">            
+            </td>
+            <td>{{students[1].fullName}}</td>
+            <td>{{students[1].birthDay}}</td>
+            <td>{{students[1].gender}}</td>
+            <td>{{students[1].mark}}</td>
+        </tr>
+        <tr>
+            <td><img src="{{students[2].photo}}" width="100px;" height="130px">  </td>
+            <td>{{students[2].fullName}}</td>
+            <td>{{students[2].birthDay}}</td>
+            <td>{{students[2].gender}}</td>
+            <td>{{students[2].mark}}</td>
+        </tr> -->
+        <tr *ngFor = "let student of students">
+            <td> <img src="{{student.photo}}" width="100px;" height="130px">  </td>
+            <td>{{student.fullName}}</td>
+            <td>{{student.birthDay}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.mark}}</td>
+        </tr>
+    </tbody>
+</table>
