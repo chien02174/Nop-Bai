@@ -1,0 +1,37 @@
+<div class="card">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><i class="fas fa-list"></i>
+        Danh Sách Sinh Viên
+      </li>
+      <li class="list-group-item">
+        <form>
+          <input type="text" name="ahihi">
+          <button>Search</button>
+        </form>
+      </li>
+      <li class="list-group-item">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">FirstName</th>
+              <th scope="col">EnrollDate</th>
+              <th scope="col">Action</th>
+            </tr>
+            <tr (click)="onSeclect(student)" *ngFor = "let student of students">
+              <td>{{student.ID}}</td>
+              <td>{{student.FirstMidName}}</td>
+             <a routerLink="action"> <td>{{student.LastName}}</td></a>
+              <td>{{student.EnrollmentDate}}</td>
+              <td>
+                <a href="#"><i class="fas fa-pen" style="color: blue"></i></a>
+                <a href="#"><i class="fas fa-address-card" style="margin-left: 10px; color: #333"></i></a>
+              </td>
+            </tr>
+          </thead>
+        </table>
+      </li>
+    </ul>
+  </div>
+  
