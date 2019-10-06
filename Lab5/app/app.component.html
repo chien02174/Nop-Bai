@@ -1,0 +1,127 @@
+<div class="container">
+  <div class="header">
+    <h4>Tạo form nhập chiều dài chiều rộng .Tính diện tích chu vi hình chữ nhật</h4>
+  </div>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Chiều Dài</label>
+      <input type="number" [(ngModel)] = "hcn.cd" [ngModelOptions]="{standalone: true} " class=" form-control ">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Chiều Rộng</label>
+        <input type="number"  [(ngModel)] = "hcn.cr" [ngModelOptions]="{standalone: true} " class="form-control">
+      </div>
+      <div class="form-group">
+          <label for="exampleInputEmail1">Chu vi</label>
+          <input type="number"  [(ngModel)] = "hcn.cv" [ngModelOptions]="{standalone: true} " class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Diện tích</label>
+            <input type="number"  [(ngModel)] = "hcn.dt" [ngModelOptions]="{standalone: true} " class="form-control">
+          </div>
+   
+    <button type="submit" class="btn btn-primary"(click)="Calculator()">Tính</button>
+  </form>
+  <hr>
+  <h4> Tạo form nhập thông tin sinh viên . Sau khi nhập nút xếp loại thì hiển thị xếp loại học lực <br> trên 5 đậu <br> dưới 5 rớt </h4>
+  <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Họ Và Tên</label>
+        <input type="text"  class=" form-control ">
+      </div>
+      <div class="form-group">
+          <label for="exampleInputEmail1">Giới Tính</label>
+          <input type="gender"  class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Ngày Sinh</label>
+            <input type="date" class="form-control">
+          </div>
+          <div class="form-group">
+              <label for="exampleInputEmail1">Điểm</label>
+              <input type="number"  placeholder="Mời nhập điểm sẽ tự random ra " [(ngModel)] = "mark" [ngModelOptions]="{standalone: true} " class="form-control">
+            </div>
+
+
+       <ng-container *ngIf=" mark >= 5 ; else elseNotEnough">
+        <h2> <div class="alert alert-success" role="alert">
+            ĐẬU
+          </div> </h2>
+       </ng-container>
+       <ng-container *ngIf=" mark < 5 ; else elseNotEnough">
+          <h2> <div class="alert alert-danger" role="alert">
+              RỚT
+            </div> </h2>
+         </ng-container>
+    </form>
+    <h4>Nhập họ tên giới tính chương trình sẽ tính lương theo độ tuổi <br> Dưới 25t :7% lương <br> từ 25-40 : 10% lương <br> trên 40 : 15% lương</h4>
+    <div class="card">
+        <div class="card-header">
+          TÍNH THƯỞNG TÊT NGUYÊN ĐÁN
+        </div>
+        <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Họ Và Tên : </label>
+              <input type="text"  class=" form-control " [(ngModel)] = "employee.name" [ngModelOptions]="{standalone: true} ">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Lương : </label>
+                <input type="number"  class=" form-control " [(ngModel)] = "employee.salary" [ngModelOptions]="{standalone: true} ">
+              </div>
+              <div class="radio">
+                 <label>
+                   <input type="radio" name="gender" value="nam" [(ngModel)] = "employee.gender" [ngModelOptions]="{standalone: true} "> Nam
+                 </label>
+                 <label>
+                    <input type="radio" name="gender" value="nu" [(ngModel)] = "employee.gender" [ngModelOptions]="{standalone: true} "> Nữ
+                  </label>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1"> Độ Tuổi </label>
+                   <select [(ngModel)] = "employee.age" [ngModelOptions]="{standalone: true} " >
+                     <option *ngFor = 'let t of list' value="{{t.rate}}">
+                       {{t.age}}
+                     </option>
+                   </select>
+                  </div> 
+                  <div class="alert alert-success" role="alert">
+                    {{TienThuong()}}
+                  </div>
+         </form>
+      </div>
+      <h4> FORM BÁN HÀNG GIẢI KHÁT</h4>
+      <div class="card" style="width: 30rem;">
+        <div class="card-header">
+        Bán Hàng Giải Khát
+        </div>
+        <table class="table" >
+          <thead>
+            <tr>
+              <th scope="col">TÊN HÀNG</th>
+              <th scope="col">SỐ LƯỢNG</th>
+              <th scope="col">ĐƠN GIÁ</th>
+              <th scope="col">THÀNH TIỀN</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let a of nuocngot">
+                <td class="form-check ml-3">
+                  <label>{{a.name}}</label>
+                </td>
+                <td>
+                  <input [(ngModel)]="a.quantity"  type="number" class="form-control">	
+                </td>
+                <td>{{a.price}}</td>
+                <td>{{a.price*a.quantity}}</td>
+              </tr>
+              
+              <tr>
+                <td class="text-center" colspan="3"><div class="alert alert-info" role="alert">
+                    Tổng Chi Phí :
+                  </div></td>
+                <td>{{All()}}</td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+</div>
