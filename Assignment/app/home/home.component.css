@@ -1,0 +1,16 @@
+.container{
+    font-family: sans-serif;
+    margin-top: 30px;
+}
+.card.text-center{
+    padding-top: 15px;
+};
+.row{
+   padding-top: 20px; 
+};
+.card-footer.text-muter{
+font-family: sans-serif !important;
+font-size: 30px !important;
+color: red;
+}
+    
