@@ -1,0 +1,28 @@
+
+<div class="container">
+    <div class="alert alert-primary" role="alert">
+        <h4>My Guitar Shop</h4>
+        
+      </div>
+  <div class="row">
+  <div class="col-3">
+      <aside>
+
+          <span>Link</span><br>
+          <a [routerLink]="['/cart']"><i class="fas fa-shopping-cart"></i></a><br>
+          <a [routerLink]="['']"><i class="fas fa-backward"></i></a><br>
+          
+          
+          <span>Categories</span><br>
+          <div *ngFor = 'let cate of categories' class="categories">
+            <a href="">{{cate.catename}}</a>
+          </div>
+          <span>Temp Link</span><br>
+          <a href="#">Admin</a>
+          </aside>
+  </div>
+  <div class="col-9">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+</div>
