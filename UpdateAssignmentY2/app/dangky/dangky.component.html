@@ -1,0 +1,31 @@
+
+<div class="container">
+    <form action="" style="width: 20rem;">
+        <h2>Đăng Ký</h2>
+       <div class="input-group">  
+          <input type="text" class="form-control"  aria-label="Username"
+          aria-describedby="basic-addon1" [(ngModel)] = "student.username" [ngModelOptions]="{standalone: true}">
+         <label for="username"> TÀI KHOẢN </label>
+        </div>
+        
+        <div class="input-group">
+
+         <input type="password" class="form-control" aria-label="Username"
+            aria-describedby="basic-addon1" [(ngModel)] = "student.password" [ngModelOptions]="{standalone: true}">
+         <label for="password">MẶT KHẨU </label>
+        </div>
+        <div class="input-group">
+            <input type="password" class="form-control"  aria-label="Username"
+            aria-describedby="basic-addon1">
+
+            <label for="password">NHẬP LẠI MẶT KHẨU </label>
+           </div>
+           <div class="input-group">
+              <input type="email" class="form-control"  [(ngModel)] = "student.email" [ngModelOptions]="{standalone: true}">
+              <label for="password">EMAIL </label>
+             </div>
+        <button type="submit" (click)='addStudent()'>Đăng Ký
+        </button>
+  
+      </form>
+</div>

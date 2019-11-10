@@ -1,0 +1,23 @@
+
+<div class="container">
+    <form action="" style="width: 20rem;">
+        <h2>Đổi Mặt Khẩu</h2>
+       <div class="input-group">
+          <input type="text" class="form-control"  aria-label="Username"
+            aria-describedby="basic-addon1" [(ngModel)]="userName" [ngModelOptions]="{standalone: true}">
+         <label for="username">TÀI KHOẢN </label>
+        </div>
+        <div class="input-group">
+            <input type="password" class="form-control" aria-label="Username"
+            aria-describedby="basic-addon1" [(ngModel)]="newPass" [ngModelOptions]="{standalone: true}">
+         <label for="password"> MẶT KHẨU MỚI </label>
+        </div>
+        <div class="input-group">
+            <input type="password" class="form-control"  aria-label="Username"
+            aria-describedby="basic-addon1" [(ngModel)]="rePass" [ngModelOptions]="{standalone: true}">
+            <label for="password">NHẬP LẠI MẶT KHẨU MỚI </label>
+           </div>
+        <button type="submit" (click) = 'changePass()' >ĐỔI MẶT KHẨU
+        </button>
+      </form>
+</div>
