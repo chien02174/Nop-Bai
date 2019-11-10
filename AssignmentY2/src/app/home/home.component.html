@@ -1,0 +1,31 @@
+<div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header" style="background-color: rgb(167, 96, 110);">
+                        Danh Mục Môn Học
+                    </div>
+                    <ul class="list-group list-group-flush" *ngFor="let item of listSubject">
+                        <li class="list-group-item">{{item.Name}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-lg-6" *ngFor="let i of listSubject  | paginate: { itemsPerPage: 4, currentPage: p }">
+                        <div class="card text-center" >
+                              <img src="{{i.Logo}}" alt="logo">
+                            <div class="card-footer">
+                                <a [routerLink]="['/home', i.Id]"><small class="text-muter" style="font-family: sans-serif ; font-size: 17px ;" >
+                                         {{i.Name}}</small></a>          
+                            </div>
+                        </div>
+                    </div>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      
+                
+                </div>
+            </div>
+        </div>
+    
+    </div>

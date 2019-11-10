@@ -1,0 +1,25 @@
+
+.nav{
+    background-color:whitesmoke;
+    
+}
+.nav-item.dropdown{
+    margin-left: 480px;
+}
+.nav-link{
+    color: #333333 !important;
+    text-shadow:.4px .4px .5px rgba(0,0,0, .2);
+    font-family: sans-serif;
+    font-size: 18px;
+    
+    
+}
+.text-center{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 60vh !important;
+}
+.row{
+    padding-top: 20px; 
+}
