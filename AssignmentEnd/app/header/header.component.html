@@ -1,0 +1,24 @@
+<div class="container">
+    <img src="assets/img/aaaaaaaaab.png">
+  
+  <nav class="nav">
+        <a class="nav-link active"[routerLink]="['/home']">Home</a>
+        <a class="nav-link" [routerLink]="['/introduce']">Introduce</a>
+        <a class="nav-link" [routerLink]="['/contact']">Contact</a>
+        <a class="nav-link" [routerLink]="['/comment']">Comment</a>
+        <a class="nav-link" [routerLink]="['/question']">Question</a>
+        <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Account
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" [routerLink] = "['/dangky']">Đăng ký</a>
+                  <a class="dropdown-item" [routerLink] = "['/dangnhap']">Đăng nhập</a>
+                  <a class="dropdown-item" [routerLink] = "['/quenmatkhau']">Quên mật khẩu</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Đăng xuất</a>
+                  <a class="dropdown-item" [routerLink]="['doimatkhau']">Đổi mặt khẩu</a>
+                </div>
+              </li>
+      </nav> 
+</div>

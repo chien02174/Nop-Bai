@@ -1,0 +1,43 @@
+<!-- <span style="font-size: 50px;color:#F99135;margin-left:580px"><strong>Forgot Password</strong></span>
+<div class="col-sm-8" style="margin-left: 530px;margin-top:20px">
+    <div *ngIf = '!pass'>
+        <div class="input-group mb-3 col-sm-6">
+          
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                aria-describedby="basic-addon1"  [(ngModel)]="userNameCheck" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="form-group col-md-6">
+            <input type="email" class="form-control" placeholder="Email"  [(ngModel)]="emailCheck" [ngModelOptions]="{standalone: true}">
+        </div>
+        <button type="submit" class="btn btn-lg btn-info" style="margin-left: 180px" (click) ="forgotPass()">Send Code</button>
+    </div>
+    <div *ngIf = 'pass'>
+        <div class="alert alert-dark" role="alert" style="width: 15rem;">
+          Mặt Khẩu Của Bạn Là : "{{forgotPass()}}"
+        </div>
+    </div>
+</div> -->
+<div class="container" >
+    <form action="" style="width: 20rem;  *ngIf ='!pass' ">
+        <h2>Quên Mặt Khẩu</h2>
+       <div class="input-group">
+          <input type="text" class="form-control"  aria-label="Username"
+          aria-describedby="basic-addon1"  [(ngModel)]="userNameCheck" [ngModelOptions]="{standalone: true}">
+         <label for="username">TÀI KHOẢN </label>
+        </div>
+        
+        <div class="input-group">
+            <input type="email" class="form-control"  [(ngModel)]="emailCheck" [ngModelOptions]="{standalone: true}">
+         <label for="password">EMAIL </label>
+        </div>
+        <button type="submit" (click) ="forgotPass()" >Click
+        </button>
+      </form>
+</div>
+<div class="container">
+    <div *ngIf = 'pass'>
+        <div class="alert alert-dark" role="alert" style="width: 15rem; ">
+          Mặt Khẩu Của Bạn Là : "{{forgotPass()}}"
+        </div>
+    </div>
+</div>

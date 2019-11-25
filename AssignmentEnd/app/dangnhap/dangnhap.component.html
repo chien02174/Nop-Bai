@@ -1,0 +1,26 @@
+<div class="container">
+  <div *ngIf='!checklogin' >
+  <form action="" style="width: 20rem;" >
+    <h2>Đăng Nhập</h2>
+   <div class="input-group">
+      <input type="text" class="form-control"  aria-label="Username"
+                aria-describedby="basic-addon1" [(ngModel)]="userNameCheck" [ngModelOptions]="{standalone: true}">
+                <label for="username">TÀI KHOẢN </label>
+    </div>
+    <div class="input-group">
+        <input type="password" class="form-control" aria-label="Username"
+        aria-describedby="basic-addon1" [(ngModel)]="passwordCheck" [ngModelOptions]="{standalone: true}">
+        <label for="username">MẶT KHẨU </label>
+    </div>
+    <button type="submit" (click)='checkLogin()' >Login
+    </button>
+    <p> Don`t have account? <a href="#">Sign Up </a></p>
+  </form>
+</div>
+<!------Đăng Nhập Thành Công -->
+<div class="card-body" *ngIf='checklogin' >
+    <div class="alert alert-danger" role="alert">
+        <h5> Đăng Nhập Thành Công</h5>
+      </div>
+</div>
+</div>
